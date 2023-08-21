@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGO_URL).then(() => console.log('db connected')).
 //! to send data in json form... this is the base url
 app.use(express.json());
 //! this is to define the endpoint. of authState with is register... and this is post request 
-app.use("/api/", authRoute);
+app.use("/api/", authRoute); 
 //* localhost:5001/api/reqister
 
 app.listen(process.env.PORT || 5002, () => console.log(`Example app listening on port ${process.env.PORT}!`))
