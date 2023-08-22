@@ -6,7 +6,7 @@ const authRoute = require("./routes/auth");
 
 // this method allows us to load variables form dotenv file.
 dotenv.config();
-mongoose.connect(process.env.MONGO_URL).then(() => console.log('db connected')).catch((err) => { console.log(err) });
+mongoose.connect(process.env.MONGO_URL).then(() => console.log('db connected')).catch((err) => { console.log(err)});
 
 //! to send data in json form... this is the base url
 app.use(express.json());
