@@ -6,7 +6,7 @@ const UserSchmea = new mongoose.Schema({
     password: { type: String, required: true },
     location: { type: String, required: false },
     isAdmin: { type: Boolean, default: false },
-    isAdmin: { type: Boolean, default: false },
+    isAgent: { type: Boolean, default: false },
     skills: { type: Array, default: false },
     profile: { type: String, required: true, default: "https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-human-profile-avatar-3d-icon-render-png-image_6319707.png" },
 
