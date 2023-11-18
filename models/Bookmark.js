@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
+const BookMarkSchema=new mongoose.Schema({
 
-const BookMarkSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    userId: {type: String, required: true},
-    title: {type: String, required: true},
-    imageUrl: {type: String, required: true},
-    company: {type: String, required: true},
-    location: {type: String, required: true},
-}, {timestamps: true} 
-);
+    job:{type:String,required:true},
+    userId:{type:String,required:true},
+    title:{type:String,required:true},
+    imageUrl:{type:String,required:true},
+    company:{type:String,required:true},
+    location:{type:String,required:true},
 
-module.exports = mongoose.model("Bookmark", BookMarkSchema);
+},{timestamps:true});
+module.exports=mongoose.model("Bookmark",BookMarkSchema);

@@ -4,17 +4,16 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
+const jobRoute = require("./routes/job");
+const bookmarkRoute = require("./routes/bookmark");
 
+dotenv.config(); 
 
-// this method allows us to load variables form dotenv file.
-dotenv.config();
-mongoose.connect(process.env.MONGO_URL).then(() => console.log('db connected')).catch((err) => { console.log(err)});
+mongoose.connect(process.env.MONGO_URL).then(() => console.log('db connected')).catch((err) => { console.log(err) });
 
-//! to send data in json form... this is the base url
 app.use(express.json());
-//! this is to define the endpoint. of authState with is register... and this is post request 
 app.use("/api/", authRoute); 
+app.use("/api/jobs", jobRoute);
 app.use("/api/users", userRoute); 
-//* localhost:5001/api/reqister
-
-app.listen(process.env.PORT || 5002, () => console.log(`Example app listening on port ${process.env.PORT}!`))
+app.use("/api/Bookmarks", bookmarkRoute);
+app.listen(process.env.Port || 5002, () => console.log(`Example app listening on port ${process.env.port}!`))
